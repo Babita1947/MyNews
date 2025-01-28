@@ -4,6 +4,7 @@ import Box from './components/Box'
 import Home from './components/Home'
 import useFetchData from './customhooks/useFetchData.js'
 import Loader from './components/Loader.jsx'
+import Footer from './components/Footer.jsx'
 
 
 function App() {
@@ -28,6 +29,8 @@ function App() {
 
         </div>
       }
+
+      <Footer option={option} setOption={setOption}/>
     </>
   )
 }

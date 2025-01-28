@@ -8,8 +8,7 @@ const Home = ({option, setOption}) => {
                          "Innovation", 
                          "Culture", 
                          "Travel", 
-                         "Earth", 
-                         "Video", 
+                         "Earth",  
                          "Live"];
   return (
 
