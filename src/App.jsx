@@ -15,7 +15,7 @@ function App() {
   console.log("data = ", data);
   return (
     <>
-      {/* <Navbar />
+      <Navbar />
       <Home option={option} setOption={setOption} />
       {
         loading ? <div>
@@ -32,7 +32,7 @@ function App() {
         </div>
       }
 
-      <Footer option={option} setOption={setOption}/> */}
+      <Footer option={option} setOption={setOption}/>
 
       <ReadMore/>
     </>

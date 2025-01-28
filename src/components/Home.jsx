@@ -12,7 +12,7 @@ const Home = ({option, setOption}) => {
                          "Live"];
   return (
 
-    <div className='w-full'>
+    <div className='w-full pt-3 sticky top-0 z-40 bg-white'>
         <div className='flex justify-center items-center gap-1 mt-3'>
             {stringArray.map((item, index) => (
                 <button key={index}

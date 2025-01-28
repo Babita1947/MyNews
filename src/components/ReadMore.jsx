@@ -1,4 +1,5 @@
 import React from 'react'
+import MahaKumbhImg from '../assets/mahakumbh.jpg';
 
 const ReadMore = () => {
 
@@ -7,8 +8,8 @@ const ReadMore = () => {
             <h1 className='w-[70%] mx-auto text-4xl font-bold text-center leading-snug'>'India Will Do The Right Thing': Trump On Migrants Row After Call With PM Modi</h1>
             <p className='w-[70%] mx-auto text-xl font-sans p-6'>'Donald Trump said Prime Minister Modi "will do what's right" when it comes to taking back Indian immigrants who came to the US illegally.</p>
 
-            <div className=''>
-
+            <div className='mx-auto text-center'>
+                <img src={MahaKumbhImg} alt="" />
             </div>
 
             <p className='w-[70%] mx-auto text-xl font-sans p-6'><span className='font-bold'>Washington DC:</span>
