@@ -3,26 +3,31 @@ import Navbar from './components/Navbar'
 import Box from './components/Box'
 import Home from './components/Home'
 import useFetchData from './customhooks/useFetchData.js'
+import Loader from './components/Loader.jsx'
 
 
 function App() {
-  const [option, setOption]=useState("sports");
-  const data = useFetchData(`https://newsapi.org/v2/everything?q=${option}&from=2024-12-28&sortBy=publishedAt&apiKey=${import.meta.env.VITE_NEWS_API_KEY}`);
-  console.log("data = ",data);
+  const [option, setOption] = useState("sports");
+  const { data, loading } = useFetchData(`https://newsapi.org/v2/everything?q=${option}&from=2024-12-28&sortBy=publishedAt&apiKey=${import.meta.env.VITE_NEWS_API_KEY}`);
+  console.log("data = ", data);
   return (
     <>
-      <Navbar/>
-      <Home option={option} setOption={setOption}/>
-      <div className='grid grid-cols-4 gap-2 px-8'>
-        {
-          data?.map((item,index) => {
-            return (
-              <Box key={index} item = {item}/>
-            )
-          })
-        }
-       
-      </div>
+      <Navbar />
+      <Home option={option} setOption={setOption} />
+      {
+        loading ? <div>
+          <Loader />
+        </div> : <div className='grid grid-cols-4 gap-2 px-8'>
+          {
+            data?.map((item, index) => {
+              return (
+                <Box key={index} item={item} />
+              )
+            })
+          }
+
+        </div>
+      }
     </>
   )
 }
