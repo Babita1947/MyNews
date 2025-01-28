@@ -7,7 +7,7 @@ import useFetchData from './customhooks/useFetchData.js'
 
 function App() {
   const [option, setOption]=useState("sports");
-  const data = useFetchData(`https://newsapi.org/v2/everything?q=${option}&from=2024-12-28&sortBy=publishedAt&apiKey=797e6f30198e4ae0bcc55e175c4b8cba`);
+  const data = useFetchData(`https://newsapi.org/v2/everything?q=${option}&from=2024-12-28&sortBy=publishedAt&apiKey=${import.meta.env.VITE_NEWS_API_KEY}`);
   console.log("data = ",data);
   return (
     <>
