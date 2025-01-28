@@ -13,13 +13,13 @@ const Footer = ({ option, setOption }) => {
         "Live"];
     return (
 
-        <div className='w-full py-5'>
+        <div className='w-full p-10'>
             <div className='w-full h-0.5 bg-slate-700'><hr /></div>
 
             <div className='h-24 w-52 border-2'>
                 <img src={MyNews} alt="" />
             </div>
-            <div className='flex justify-start items-center gap-1 pl-10'>
+            <div className='flex justify-start items-center gap-1 pl-9'>
                 {stringArray.map((item, index) => (
                     <button key={index}
                         onClick={() => setOption(item.toLowerCase())}
@@ -29,7 +29,9 @@ const Footer = ({ option, setOption }) => {
             </div>
 
 
+            <div className='text-xs text-black pl-12'>Copyright 2025 MyNews. All rights reserved.  <span className='italic'> The MyNews is not responsible for the content of external sites.</span> <span className='font-bold '>Read about our approach to external linking.</span>
 
+</div>
             <div className='w-full h-1 pt-4'><hr /></div>
 
         </div>

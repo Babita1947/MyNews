@@ -5,15 +5,17 @@ import Home from './components/Home'
 import useFetchData from './customhooks/useFetchData.js'
 import Loader from './components/Loader.jsx'
 import Footer from './components/Footer.jsx'
+import ReadMore from './components/ReadMore.jsx'
 
 
 function App() {
   const [option, setOption] = useState("sports");
   const { data, loading } = useFetchData(`https://newsapi.org/v2/everything?q=${option}&from=2024-12-28&sortBy=publishedAt&apiKey=${import.meta.env.VITE_NEWS_API_KEY}`);
+  
   console.log("data = ", data);
   return (
     <>
-      <Navbar />
+      {/* <Navbar />
       <Home option={option} setOption={setOption} />
       {
         loading ? <div>
@@ -30,7 +32,9 @@ function App() {
         </div>
       }
 
-      <Footer option={option} setOption={setOption}/>
+      <Footer option={option} setOption={setOption}/> */}
+
+      <ReadMore/>
     </>
   )
 }
