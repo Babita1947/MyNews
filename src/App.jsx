@@ -18,9 +18,8 @@ function App() {
       <Navbar />
       <Home option={option} setOption={setOption} />
       {
-        loading ? <div>
-          <Loader />
-        </div> : <div className='grid grid-cols-4 gap-2 px-8'>
+        loading ? <div><Loader /></div> : 
+        <div className='grid grid-cols-4 gap-2 px-8'>
           {
             data?.map((item, index) => {
               return (
@@ -28,10 +27,8 @@ function App() {
               )
             })
           }
-
         </div>
       }
-
       <Footer option={option} setOption={setOption}/>
 
       
