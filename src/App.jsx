@@ -10,7 +10,7 @@ import ReadMore from './components/ReadMore.jsx'
 
 function App() {
   const [option, setOption] = useState("sports");
-  const { data, loading } = useFetchData(`https://newsapi.org/v2/everything?q=${option}&from=2024-12-28&sortBy=publishedAt&apiKey=${import.meta.env.VITE_NEWS_API_KEY}`);
+  const { data, loading } = useFetchData(`https://newsapi.org/v2/everything?q=${option}&from=2025-01-29&sortBy=publishedAt&apiKey=${import.meta.env.VITE_NEWS_API_KEY}`);
   
   console.log("data = ", data);
   return (
@@ -34,7 +34,7 @@ function App() {
 
       <Footer option={option} setOption={setOption}/>
 
-      <ReadMore/>
+      
     </>
   )
 }

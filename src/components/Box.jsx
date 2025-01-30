@@ -1,7 +1,9 @@
 import React from 'react'
+import { useNavigate } from 'react-router';
 
 const Box = ({ item }) => {
   console.log(item);
+  const navigate = useNavigate();
 
   const truncatedStr = item?.title?.substring(0, 60);
   const timestamp = item?.publishedAt;
@@ -17,6 +19,14 @@ const Box = ({ item }) => {
     hour12: false,
   });
 
+  const readMoreBtn=()=>{
+    navigate("/view-news",{
+      state:{
+        data:item
+      }
+    });
+  }
+
   return (
     <div>
       <div className='px-3 mt-5 overflow-x-hidden '>
@@ -30,7 +40,10 @@ const Box = ({ item }) => {
         <div className='flex justify-between items-center text-sm text-slate-700 mt-3'>
           <p>{formattedDate}</p>
           <div className='h-4 w-[1px] bg-slate-700'></div>
-          <button type="button" className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Read more!</button>
+          <button 
+          type='button'
+          onClick={readMoreBtn}
+          className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Read more!</button>
         </div>
       </div>
     </div>

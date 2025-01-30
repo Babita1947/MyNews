@@ -1,31 +1,66 @@
 import React from 'react'
-import MahaKumbhImg from '../assets/mahakumbh.jpg';
+import { MdShare } from "react-icons/md";
+import { FaRegBookmark } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
+
+import { useLocation } from 'react-router';
+import Home from './Home';
+import Navbar from './Navbar';
+
 
 const ReadMore = () => {
+    const { state } = useLocation();
+    const { data } = state;
+    console.log("data from route", data);
+
+    //const truncatedStr = item?.title?.substring(0, 60);
+    const timestamp = data?.publishedAt;
+    const date = new Date(timestamp);
+
+    // Format to dd/mm/yyyy hour:min
+    const formattedDate = date.toLocaleString("en-GB", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+    });
 
     return (
-        <div className='w-full mx-auto flex flex-col p-8'>
-            <h1 className='w-[70%] mx-auto text-4xl font-bold text-center leading-snug'>'India Will Do The Right Thing': Trump On Migrants Row After Call With PM Modi</h1>
-            <p className='w-[70%] mx-auto text-xl font-sans p-6'>'Donald Trump said Prime Minister Modi "will do what's right" when it comes to taking back Indian immigrants who came to the US illegally.</p>
+        <div className='w-full mx-auto flex flex-col'>
+            <Navbar/>
+            <Home/>
+            <h1 className='w-[60%] mx-auto text-4xl font-bold text-center leading-snug'>{data?.title}</h1>
+            <p className='w-[70%] mx-auto text-xl font-sans p-6'>{data?.description}</p>
 
+            <div className='w-[70%] text-sm flex justify-between items-center mx-auto p-6'>
+                <p>{formattedDate}</p>
+                <div className='flex items-center gap-5'>
+                    <div className='flex items-center gap-2'>
+                        <p>Share</p>
+                        <MdShare />
+                    </div>
+                    <div className='flex items-center gap-2'>
+                        <p>Save</p>
+                        <FaRegBookmark />
+                    </div>
+                </div>
+
+            </div>
             <div className='mx-auto text-center'>
-                <img src={MahaKumbhImg} alt="" />
+                <img src={data?.urlToImage} alt="" className='w-[70%] h-[50%] mx-auto' />
             </div>
 
-            <p className='w-[70%] mx-auto text-xl font-sans p-6'><span className='font-bold'>Washington DC:</span>
-                US President Donald Trump on Monday (local time) had a "productive" phone call with Prime Minister Narendra Modi, where the two leaders discussed expanding and deepening bilateral cooperation and issues including security in the Indo-Pacific, the Middle East, and Europe. This was the first telephonic conversation between President Trump and Prime Minister Modi since the Republican was sworn in for a second term on January 20.
 
-                Later, Mr Trump told reporters that PM Modi was scheduled to visit the United States sometime in February.
+            <p className='w-[70%] mx-auto text-xl p-6'>{data?.content}</p>
 
-                "I had a long talk with him this morning (Monday). He is going to be coming to the White House, over next month, probably February. We have a very good relationship with India," he told reporters aboard Air Force One.
+            <button className="w-[40%] mx-auto px-4 py-2 bg-slate-800 text-white rounded-lg flex items-center justify-center gap-2 hover:bg-slate-700 transition duration-300 mt-5">
+                <p className='text-center'>Continue Reading</p>
+                <FaArrowRight />
+            </button>
 
-                The American leader noted he discussed the issue of immigration with the Indian Premier and said Prime Minister Modi "will do what's right" when it comes to taking back Indian immigrants who came to the US illegally.
 
-                The call came against the backdrop of reports suggesting that the Indian side was working on an early meeting between the two leaders. President Trump and PM Modi enjoyed warm relations in the US president's first term, but during his campaign for re-election, the 78-year-old American leader called India a "very big abuser" of trade and vowed to use tariffs on global imports into the US to correct imbalances.
-
-                He has also threatened the BRICS group of nations, of which India is a part, with tariffs if they did not accept his demand of committing to not create a new currency.
-
-            </p>
 
         </div>
     )
