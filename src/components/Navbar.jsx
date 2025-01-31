@@ -4,7 +4,7 @@ import { IoSearch } from "react-icons/io5";
 
 import MyNews from '../assets/mynewsblue.png';
 
-const Navbar = () => {
+const Navbar = ({input, setInput}) => {
     return (
         <div className='w-full px-5 py-0'>
             <div className='flex justify-around'>
@@ -18,7 +18,7 @@ const Navbar = () => {
                     <form className="w-[70%] mx-auto pt-7">
                         <label
                             htmlFor="default-search"
-                            className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+                            className="mb-2 text-sm font-medium text-gray-900 sr-only "
                         >
                             Search
                         </label>
@@ -43,9 +43,11 @@ const Navbar = () => {
                             </div>
                             {/* Input Field */}
                             <input
+                                value={input}
+                                onChange={(e)=>setInput(e.target.value)}
                                 type="search"
                                 id="default-search"
-                                className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-100 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 dark:bg-slate-50 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-100 placeholder-gray-500 "
                                 placeholder="Search Mockups, Logos..."
                                 required
                             />

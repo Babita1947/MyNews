@@ -4,6 +4,7 @@ import { FaRegBookmark, FaArrowRight } from "react-icons/fa";
 import { useLocation } from 'react-router';
 import Home from './Home';
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 const ReadMore = () => {
     const { state } = useLocation();
@@ -66,7 +67,10 @@ const ReadMore = () => {
                 <p className='text-center'>Continue Reading</p>
                 <FaArrowRight />
             </button>
+            <Footer/>
         </div>
+        
+    
     );
 }
 

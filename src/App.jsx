@@ -10,18 +10,22 @@ import ReadMore from './components/ReadMore.jsx'
 
 function App() {
   const [option, setOption] = useState("sports");
-  const { data, loading } = useFetchData(`https://newsapi.org/v2/everything?q=${option}&from=2025-01-29&sortBy=publishedAt&apiKey=${import.meta.env.VITE_NEWS_API_KEY}`);
+  const [input , setInput]=useState("");
+  const { data, loading } = useFetchData(`https://newsapi.org/v2/everything?q=${option}&from=2025-01-14&sortBy=publishedAt&apiKey=${import.meta.env.VITE_NEWS_API_KEY}`);
+
+const filteredBooks = data?.filter(val => val.title.toLowerCase().includes(input));
+console.log(filteredBooks);
   
-  console.log("data = ", data);
+  // console.log("data = ", data);
   return (
     <>
-      <Navbar />
+      <Navbar input={input} setInput={setInput} />
       <Home option={option} setOption={setOption} />
       {
         loading ? <div><Loader /></div> : 
         <div className='grid grid-cols-4 gap-2 px-8'>
           {
-            data?.map((item, index) => {
+            filteredBooks?.map((item, index) => {
               return (
                 <Box key={index} item={item} />
               )

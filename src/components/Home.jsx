@@ -1,15 +1,16 @@
 import React from 'react'
-
+import { useNavigate } from 'react-router';
+const stringArray = ["Home", 
+    "News", 
+    "Sports", 
+    "Business", 
+    "Innovation", 
+    "Culture", 
+    "Travel", 
+    "Earth",  
+    "Live"
+];
 const Home = ({option, setOption}) => {
-    const stringArray = ["Home", 
-                         "News", 
-                         "Sports", 
-                         "Business", 
-                         "Innovation", 
-                         "Culture", 
-                         "Travel", 
-                         "Earth",  
-                         "Live"];
   return (
 
     <div className='w-full pt-3 sticky top-0 z-40 bg-white'>

@@ -35,7 +35,7 @@ const Footer = ({ option, setOption }) => {
             <div className='w-full h-0.5 bg-slate-700'><hr /></div>
 
         </div>
-    )
+    );
 }
 
 export default Footer
