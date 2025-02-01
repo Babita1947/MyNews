@@ -6,7 +6,7 @@ import MyNews from '../assets/mynewsblue.png';
 
 const Navbar = ({input, setInput}) => {
     return (
-        <div className='w-full px-5 py-0'>
+        <div className='max-w-full px-5 py-0'>
             <div className='flex justify-around'>
                 <div className='flex justify-center items-center pt-3 m-1 text-2xl'>
                     <GiHamburgerMenu />
@@ -14,15 +14,12 @@ const Navbar = ({input, setInput}) => {
                 </div>
 
                 <div className='flex flex-1 py-3'>
-
                     <form className="w-[70%] mx-auto pt-7">
                         <label
                             htmlFor="default-search"
-                            className="mb-2 text-sm font-medium text-gray-900 sr-only "
-                        >
-                            Search
+                            className="mb-2 text-sm font-medium text-gray-900 sr-only ">Search
                         </label>
-                        <div className="relative">
+                        <div className="relative hidden sm:block">
                             {/* Search Icon */}
                             <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                                 <svg
@@ -62,7 +59,7 @@ const Navbar = ({input, setInput}) => {
                     </form>
 
                 </div>
-                <div className='h-24 w-56 pb-6 object-contain'>
+                <div className='sm:h-24 sm:w-56 h-16 w-28 pb-6 object-contain'>
                     <img src={MyNews} alt="" />
                 </div>
 

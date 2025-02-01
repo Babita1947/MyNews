@@ -35,20 +35,20 @@ const ReadMore = () => {
     });
 
     return (
-        <div className='w-full mx-auto flex flex-col'>
+        <div className='max-w-full mx-auto flex flex-col'>
             <Navbar />
             <Home />
-            <h1 className='w-[60%] mx-auto text-4xl font-bold text-center leading-snug'>{data?.title}</h1>
-            <p className='w-[70%] mx-auto text-xl font-sans p-6'>{data?.description}</p>
+            <h1 className='sm:max-w-[60%] sm:mx-auto sm:text-4xl text-2xl p-5 font-bold sm:text-center text-start leading-snug'>{data?.title}</h1>
+            <p className='sm:max-w-[70%] mx-auto sm:text-xl font-sans p-6'>{data?.description}</p>
 
-            <div className='w-[70%] text-sm flex justify-between items-center mx-auto p-6'>
+            <div className='sm:max-w-[70%] text-sm grid grid-cols-2 gap-10 sm:mx-auto p-6'>
                 <p>{formattedDate}</p>
-                <div className='flex items-center gap-5'>
-                    <div className='flex items-center gap-2'>
+                <div className='flex justify-between sm:gap-5'>
+                    <div className='flex items-center sm:gap-2 '>
                         <p>Share</p>
                         <MdShare />
                     </div>
-                    <div className='flex items-center gap-2'>
+                    <div className='flex items-center sm:gap-2'>
                         <p>Save</p>
                         <FaRegBookmark />
                     </div>
@@ -56,14 +56,14 @@ const ReadMore = () => {
             </div>
 
             <div className='mx-auto text-center'>
-                <img src={data?.urlToImage} alt="" className='w-[70%] h-[50%] mx-auto' />
+                <img src={data?.urlToImage} alt="" className='sm:w-[70%] sm:h-[50%] p-2 mx-auto' />
             </div>
 
-            <p className='w-[70%] mx-auto text-xl p-6'>{data?.content}</p>
+            <p className='sm:max-w-[70%] mx-auto sm:text-xl font-sans p-6'>{data?.content}</p>
 
             <button 
                 onClick={continueReadBtn}
-                className="w-[40%] mx-auto px-4 py-2 bg-slate-800 text-white rounded-lg flex items-center justify-center gap-2 hover:bg-slate-700 transition duration-300 mt-5">
+                className="sm:w-[40%] mx-auto px-4 py-2 bg-slate-800 text-white rounded-lg flex items-center justify-center gap-2 hover:bg-slate-700 transition duration-300 mt-5">
                 <p className='text-center'>Continue Reading</p>
                 <FaArrowRight />
             </button>

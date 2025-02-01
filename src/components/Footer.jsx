@@ -13,13 +13,13 @@ const Footer = ({ option, setOption }) => {
         "Live"];
     return (
 
-        <div className='w-full p-10'>
+        <div className='max-w-full sm:p-10 py-5'>
             <div className='w-full h-0.5 bg-slate-700'><hr /></div>
 
-            <div className='h-24 w-52 '>
+            <div className='sm:h-24 sm:w-52 h-20 w-44'>
                 <img src={MyNews} alt="" />
             </div>
-            <div className='flex justify-start items-center gap-1 pl-9'>
+            <div className='flex sm:flex-row flex-col sm:justify-start sm:items-center items-start gap-4 px-3 sm:gap-1 sm:pl-9'>
                 {stringArray.map((item, index) => (
                     <button key={index}
                         onClick={() => setOption(item.toLowerCase())}
@@ -29,7 +29,7 @@ const Footer = ({ option, setOption }) => {
             </div>
 
 
-            <div className='text-xs text-black pl-12 py-10'>Copyright 2025 MyNews. All rights reserved.  <span className='italic'> The MyNews is not responsible for the content of external sites.</span> <span className='font-bold '>Read about our approach to external linking.</span>
+            <div className='sm:text-xs text-sm text-black sm:pl-12 p-3 py-10'>Copyright 2025 MyNews. All rights reserved.  <span className='italic'> The MyNews is not responsible for the content of external sites.</span> <span className='font-bold '>Read about our approach to external linking.</span>
             </div>
 
             <div className='w-full h-0.5 bg-slate-700'><hr /></div>

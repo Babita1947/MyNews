@@ -13,8 +13,8 @@ const stringArray = ["Home",
 const Home = ({option, setOption}) => {
   return (
 
-    <div className='w-full pt-3 sticky top-0 z-40 bg-white'>
-        <div className='flex justify-center items-center gap-1 mt-3'>
+    <div className='max-w-full pt-3 sticky top-0 z-40 bg-white'>
+        <div className='hidden sm:flex justify-center items-center gap-1 mt-3'>
             {stringArray.map((item, index) => (
                 <button key={index}
                     onClick={()=>setOption(item.toLowerCase())}

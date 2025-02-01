@@ -5,7 +5,7 @@ import Home from './components/Home'
 import useFetchData from './customhooks/useFetchData.js'
 import Loader from './components/Loader.jsx'
 import Footer from './components/Footer.jsx'
-import ReadMore from './components/ReadMore.jsx'
+
 
 
 function App() {
@@ -23,7 +23,7 @@ console.log(filteredBooks);
       <Home option={option} setOption={setOption} />
       {
         loading ? <div><Loader /></div> : 
-        <div className='grid grid-cols-4 gap-2 px-8'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-2 sm:px-8 px-3'>
           {
             filteredBooks?.map((item, index) => {
               return (

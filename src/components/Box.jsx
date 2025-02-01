@@ -28,7 +28,7 @@ const Box = ({ item }) => {
   }
 
   return (
-    <div>
+    <div className='max-w-full'>
       <div className='px-3 mt-5 overflow-x-hidden '>
         <div className='h-50'>
           <img src={item?.urlToImage} alt="Image not found" className='h-44 w-full' />
