@@ -34,8 +34,6 @@ console.log(filteredBooks);
         </div>
       }
       <Footer option={option} setOption={setOption}/>
-
-      
     </>
   )
 }
