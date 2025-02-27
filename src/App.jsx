@@ -11,9 +11,9 @@ import Footer from './components/Footer.jsx'
 function App() {
   const [option, setOption] = useState("sports");
   const [input , setInput]=useState("");
-  const { data, loading } = useFetchData(`https://newsapi.org/v2/everything?q=${option}&from=2025-01-14&sortBy=publishedAt&apiKey=${import.meta.env.VITE_NEWS_API_KEY}`);
+  const { data, loading } = useFetchData(`https://saurav.tech/NewsAPI/top-headlines/category/${option}/in.json`);
 
-const filteredBooks = data?.filter(val => val.title.toLowerCase().includes(input));
+const filteredBooks = data?.filter(val => val?.title?.toLowerCase().includes(input));
 console.log(filteredBooks);
   
   // console.log("data = ", data);
