@@ -1,14 +1,14 @@
 import React from 'react'
 import { useNavigate } from 'react-router';
-const stringArray = ["Home", 
-    "News", 
-    "Sports", 
+
+const stringArray = [
+    "General", 
     "Business", 
-    "Innovation", 
-    "Culture", 
-    "Travel", 
-    "Earth",  
-    "Live"
+    "Entertainment", 
+    "Health", 
+    "Science", 
+    "Sports", 
+    "Technology", 
 ];
 const Home = ({option, setOption}) => {
   return (

@@ -9,7 +9,7 @@ import Footer from './components/Footer.jsx'
 
 
 function App() {
-  const [option, setOption] = useState("sports");
+  const [option, setOption] = useState("general");
   const [input , setInput]=useState("");
   const { data, loading } = useFetchData(`https://saurav.tech/NewsAPI/top-headlines/category/${option}/in.json`);
 
