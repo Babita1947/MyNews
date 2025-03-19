@@ -13,13 +13,13 @@ function App() {
   const [input , setInput]=useState("");
   const { data, loading } = useFetchData(`https://saurav.tech/NewsAPI/top-headlines/category/${option}/in.json`);
 
-const filteredBooks = data?.filter(val => val?.title?.toLowerCase().includes(input));
-console.log(filteredBooks);
+  const filteredBooks = data?.filter(val => val?.title?.toLowerCase().includes(input));
+  console.log(filteredBooks);
   
   // console.log("data = ", data);
   return (
     <>
-      <Navbar input={input} setInput={setInput} />
+      <Navbar input={input} setInput={setInput} setOption={setOption}/>
       <Home option={option} setOption={setOption} />
       {
         loading ? <div><Loader /></div> : 
